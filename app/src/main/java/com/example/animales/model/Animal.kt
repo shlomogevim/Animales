@@ -120,3 +120,4 @@ data class Speed(
     }
 }
 
+data class AnimalsPalette(var color:Int)

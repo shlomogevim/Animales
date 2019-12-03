@@ -29,7 +29,7 @@ class AnimalListAdapter( private val animalList:ArrayList<Animal>):
     override fun getItemCount()=animalList.size
 
     override fun onBindViewHolder(holder: AnimalViewHolder, position: Int) {
-        holder.view.animalName.text=animalList[position].name
+        holder.view.animalName1.text=animalList[position].name
         holder.view.animalImage.loadImage(animalList[position]
                                   .imageUrl, getProgressDrawable(holder.view.context))
         holder.view.animalLayout.setOnClickListener {
