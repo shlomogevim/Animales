@@ -12,7 +12,8 @@ import com.example.animales.util.loadImage
 import kotlinx.android.synthetic.main.item_layout.view.*
 
 class AnimalListAdapter( private val animalList:ArrayList<Animal>):
-                      RecyclerView.Adapter<AnimalListAdapter.AnimalViewHolder>() {
+    RecyclerView.Adapter<AnimalListAdapter.AnimalViewHolder>() {
+
     fun updateAnimalList(newAnimalList:List<Animal>){
         animalList.clear()
         animalList.addAll(newAnimalList)
@@ -31,10 +32,10 @@ class AnimalListAdapter( private val animalList:ArrayList<Animal>):
     override fun onBindViewHolder(holder: AnimalViewHolder, position: Int) {
         holder.view.animalName.text=animalList[position].name
         holder.view.animalImage.loadImage(animalList[position]
-                                  .imageUrl, getProgressDrawable(holder.view.context))
+            .imageUrl, getProgressDrawable(holder.view.context))
         holder.view.animalLayout.setOnClickListener {
             val action=ListFragmentDirections.
-                   actionDetails(animalList[position])
+                actionDetails(animalList[position])
             Navigation.findNavController(holder.view).navigate(action)
         }
     }
